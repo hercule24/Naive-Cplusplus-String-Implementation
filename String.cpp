@@ -1,3 +1,4 @@
+#include <iostream>
 #include "String.h"
 
 String::String() : capacity(15), size(0), p(new char[16]) {}
@@ -5,6 +6,7 @@ String::String() : capacity(15), size(0), p(new char[16]) {}
 String::~String() { delete[] p; }
 
 String::String(const char* s) {
+    //std::cout << "from c string" << std::endl;
     size_t s_size = strlen(s);
     if (s_size > capacity) {
         delete[] p;

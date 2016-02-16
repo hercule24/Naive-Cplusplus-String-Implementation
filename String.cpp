@@ -84,6 +84,10 @@ String& String::operator+= (const String& s) {
     size_t new_size = size + s.length();
     if (new_size > capacity) {
         capacity = 2 * new_size;
+        char* new_p = new char[capacity + 1];
+        strcpy(new_p, p);
+        delete[] p;
+        p = new_p;
     }
     strncpy(p+size, s.p, s.length());
     size = new_size;
@@ -95,6 +99,10 @@ String& String::operator+= (const char* s) {
     size_t new_size = size + s_size;
     if (new_size > capacity) {
         capacity = 2 * new_size;
+        char* new_p = new char[capacity + 1];
+        strcpy(new_p, p);
+        delete[] p;
+        p = new_p;
     }
     strncpy(p+size, s, s_size);
     size = new_size;

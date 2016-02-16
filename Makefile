@@ -1,2 +1,2 @@
 test:
-	g++ -g -o string string.cpp test.cpp -std=c++11
+	g++ -g -o string String.cpp test.cpp -std=c++11

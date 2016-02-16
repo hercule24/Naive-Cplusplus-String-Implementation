@@ -35,12 +35,13 @@ int main() {
     //String dest(std::move(to_be_moved));
     //cout << to_be_moved << endl;
     //cout << dest << endl;
-    
+    //
     //String a;
     //a += 'a';
     //a += 'b';
     //a += 'c';
     //cout << a << endl;
+
     String h = "hello";
     String w = " world"; 
     h += w;

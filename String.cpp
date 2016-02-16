@@ -10,31 +10,25 @@ String::~String() { delete[] p; }
 String::String(const char* s) {
     size = strlen(s);
     capacity = 2 * size;
-    p = new char[2 * size + 1];
+    p = new char[capacity + 1];
     strcpy(p, s);
 }
 
 String::String(const String& s) {
     size = s.length();
     capacity = 2 * size;
-    p = new char[2 * size + 1];
-    for (int i = 0; i < size; i++) {
-        p[i] = s.p[i];
-    }
-    p[size] = '\0';
+    p = new char[capacity + 1];
+    strcpy(p, s.p);
 }
 
 String& String::operator= (const String& s) {
     size = s.length();
     if (size > capacity) {
         delete[] p;
-        p = new char[2 * size + 1];
         capacity = 2 * size;
+        p = new char[capacity + 1];
     }
-    for (int i = 0; i < size; i++) {
-        p[i] = s.p[i];
-    }
-    p[size] = '\0';
+    strcpy(p, s.p);
     return *this;
 }
 

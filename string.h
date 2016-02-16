@@ -17,8 +17,12 @@ class String {
         String(String&& s);
         String& operator= (String&& s);
         size_t length() const;
-        char operator[] (size_t i) const;
+        char& operator[] (size_t i);
+        const char& operator[] (size_t i) const;
         bool empty() const;
+        String& operator+= (char c);
+        String& operator+= (const String& s);
+        String& operator+= (const char* s);
 };
 
 #endif
